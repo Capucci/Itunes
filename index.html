@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Amazon Music - Álbum Vertical</title>
+    <title>Meus Álbuns - Demos Amazon Music</title>
     <style>
         * { 
             margin: 0; 
@@ -14,61 +14,165 @@
         body {
             background: linear-gradient(135deg, #0a1217 0%, #0d1a1f 100%);
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 2rem;
             min-height: 100vh;
-            padding: 0;
-            margin: 0;
         }
         
-        .container {
-            width: 100%;
-            max-width: 1080px;
-            height: 100vh;
-            max-height: 1920px;
-            background: rgba(16, 28, 34, 0.75);
-            backdrop-filter: blur(8px);
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .header p {
+            color: #8aa89e;
+            font-size: 1rem;
+        }
+        
+        .albums-grid {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 0;
-            margin: 0;
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+            gap: 2.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .album-card {
+            width: 100%;
+            background: rgba(16, 28, 34, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .album-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .album-title {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            padding-left: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .album-title::before {
+            content: "🎵";
+            font-size: 1rem;
+        }
+        
+        .embed-wrapper {
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
         }
         
         iframe {
             width: 100%;
-            height: 100%;
+            height: 400px;
             border: none;
             background: #0b1419;
+            display: block;
         }
         
-        /* Para telas que não suportam 1080x1920, ajusta mantendo proporção */
-        @media (max-width: 1080px) {
-            .container {
-                width: 100vw;
-                height: 100vh;
-            }
+        .demo-badge {
+            display: inline-block;
+            background: rgba(212, 241, 233, 0.15);
+            color: #d4f1e9;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            margin-left: 0.5rem;
+            font-weight: normal;
         }
         
-        /* Remove qualquer espaçamento extra em telas muito altas */
-        @media (min-height: 1920px) {
-            .container {
-                max-height: 1920px;
-            }
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #6b8a7e;
+            font-size: 0.8rem;
+        }
+        
+        .footer a {
+            color: #d4f1e9;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 640px) {
+            body { padding: 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .albums-grid { gap: 1.5rem; }
+            .album-card { padding: 0.8rem; }
+            iframe { height: 380px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <iframe 
-            src='https://music.amazon.com.br/embed/B0GFP191KN/?id=2SKplT2yF4&marketplaceId=ART4WZ8MWBX2Y&musicTerritory=BR' 
-            frameborder='0'
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
+    <div class="header">
+        <h1>Meus Álbuns</h1>
+        <p>🎧 Clique e ouça as demos - previews grátis de cada faixa</p>
+    </div>
+
+    <div class="albums-grid">
+        <!-- ÁLBUM 1 - Substitua pelos seus dados -->
+        <div class="album-card">
+            <div class="album-title">
+                Álbum: Horizonte Distante
+                <span class="demo-badge">Demo Preview</span>
+            </div>
+            <div class="embed-wrapper">
+                <iframe 
+                    src='https://music.amazon.com.br/embed/B0GFP191KN/?id=2SKplT2yF4&marketplaceId=ART4WZ8MWBX2Y&musicTerritory=BR' 
+                    frameborder='0'
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- ÁLBUM 2 - Adicione outro embed aqui -->
+        <!-- 
+        <div class="album-card">
+            <div class="album-title">
+                Álbum: Noites Eletrônicas
+                <span class="demo-badge">Demo Preview</span>
+            </div>
+            <div class="embed-wrapper">
+                <iframe 
+                    src='COLAR_URL_DO_SEU_OUTRO_EMBED_AQUI' 
+                    frameborder='0'
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        -->
+    </div>
+
+    <div class="footer">
+        🔊 Demos com duração de 30-60 segundos • <a href="#" target="_blank">Ouça o álbum completo no Amazon Music</a>
     </div>
 </body>
 </html>
