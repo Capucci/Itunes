@@ -5,70 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon Music - Álbum</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
         body {
-            background: #0a1217;
-            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a1217 0%, #0d1a1f 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 1.5rem;
         }
+        
         .container {
-            max-width: 680px;
+            max-width: 550px;
             width: 100%;
-            background: #101c22;
+            background: rgba(16, 28, 34, 0.75);
+            backdrop-filter: blur(8px);
             border-radius: 2rem;
-            padding: 1.8rem;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.5);
+            padding: 1.5rem;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            transition: transform 0.2s ease;
         }
-        .cover {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.5rem;
+        
+        .container:hover {
+            transform: translateY(-2px);
         }
-        .cover img {
-            width: 200px;
-            height: 200px;
-            border-radius: 1.2rem;
-            object-fit: cover;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.15);
-        }
+        
         iframe {
             width: 100%;
-            height: 420px;
+            height: 500px;
             border-radius: 1.2rem;
             border: none;
             background: #0b1419;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
-        hr {
-            margin: 1rem 0;
-            border-color: #2c4a40;
-        }
-        .small {
+        
+        .info {
             text-align: center;
-            font-size: 0.75rem;
-            color: #7f9c91;
             margin-top: 1rem;
+            padding: 0.5rem;
+        }
+        
+        .info p {
+            color: #8aa89e;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .info a {
+            color: #d4f1e9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .info a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        /* Versão ainda mais compacta para mobile */
+        @media (max-width: 550px) {
+            body { padding: 0.8rem; }
+            .container { padding: 0.8rem; }
+            iframe { height: 480px; }
+        }
+        
+        /* Para telas muito altas, podemos aumentar um pouco */
+        @media (min-height: 800px) {
+            iframe { height: 560px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="cover">
-            <img src="https://m.media-amazon.com/images/I/81QjQmch2WL._UF1000,1000_QL80_.jpg" 
-                 alt="Capa"
-                 onerror="this.src='https://placehold.co/400x400/1a3a32/white?text=🎵'">
-        </div>
+        <!-- Apenas o embed vertical - a capa já está dentro dele -->
         <iframe 
             src='https://music.amazon.com.br/embed/B0GFP191KN/?id=2SKplT2yF4&marketplaceId=ART4WZ8MWBX2Y&musicTerritory=BR' 
             frameborder='0'
-            allow="autoplay; fullscreen">
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            allowfullscreen>
         </iframe>
-        <div class="small">
-            ✅ Player Amazon Music compatível | Toca automaticamente
+        
+        <div class="info">
+            <p>🎧 Tocando no <a href="https://music.amazon.com.br/albums/B0GFP191KN" target="_blank">Amazon Music</a> • Playlist completa</p>
         </div>
     </div>
 </body>
