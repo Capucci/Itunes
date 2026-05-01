@@ -3,98 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Music - Álbum</title>
+    <title>Amazon Music - 1080x1920</title>
     <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: linear-gradient(135deg, #0a1217 0%, #0d1a1f 100%);
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #0a1217;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 1.5rem;
         }
-        
         .container {
-            max-width: 550px;
-            width: 100%;
-            background: rgba(16, 28, 34, 0.75);
-            backdrop-filter: blur(8px);
-            border-radius: 2rem;
-            padding: 1.5rem;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
-            transition: transform 0.2s ease;
+            width: 1080px;
+            height: 1920px;
+            background: #0b1419;
         }
-        
-        .container:hover {
-            transform: translateY(-2px);
-        }
-        
         iframe {
             width: 100%;
-            height: 500px;
-            border-radius: 1.2rem;
+            height: 100%;
             border: none;
-            background: #0b1419;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
-        
-        .info {
-            text-align: center;
-            margin-top: 1rem;
-            padding: 0.5rem;
-        }
-        
-        .info p {
-            color: #8aa89e;
-            font-size: 0.8rem;
-            letter-spacing: 0.3px;
-        }
-        
-        .info a {
-            color: #d4f1e9;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .info a:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-        
-        /* Versão ainda mais compacta para mobile */
-        @media (max-width: 550px) {
-            body { padding: 0.8rem; }
-            .container { padding: 0.8rem; }
-            iframe { height: 480px; }
-        }
-        
-        /* Para telas muito altas, podemos aumentar um pouco */
-        @media (min-height: 800px) {
-            iframe { height: 560px; }
+        /* Em telas menores, adiciona scroll */
+        @media (max-width: 1080px) or (max-height: 1920px) {
+            body { display: block; }
+            .container { margin: 0 auto; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Apenas o embed vertical - a capa já está dentro dele -->
         <iframe 
             src='https://music.amazon.com.br/embed/B0GFP191KN/?id=2SKplT2yF4&marketplaceId=ART4WZ8MWBX2Y&musicTerritory=BR' 
             frameborder='0'
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
             allowfullscreen>
         </iframe>
-        
-        <div class="info">
-            <p>🎧 Tocando no <a href="https://music.amazon.com.br/albums/B0GFP191KN" target="_blank">Amazon Music</a> • Playlist completa</p>
-        </div>
     </div>
 </body>
 </html>
