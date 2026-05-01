@@ -2,31 +2,62 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Music - 1080x1920</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Amazon Music - Álbum Vertical</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
         body {
-            background: #0a1217;
+            background: linear-gradient(135deg, #0a1217 0%, #0d1a1f 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 0;
+            margin: 0;
         }
+        
         .container {
-            width: 1080px;
-            height: 1920px;
-            background: #0b1419;
+            width: 100%;
+            max-width: 1080px;
+            height: 100vh;
+            max-height: 1920px;
+            background: rgba(16, 28, 34, 0.75);
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
         }
+        
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            background: #0b1419;
         }
-        /* Em telas menores, adiciona scroll */
-        @media (max-width: 1080px) or (max-height: 1920px) {
-            body { display: block; }
-            .container { margin: 0 auto; }
+        
+        /* Para telas que não suportam 1080x1920, ajusta mantendo proporção */
+        @media (max-width: 1080px) {
+            .container {
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+        
+        /* Remove qualquer espaçamento extra em telas muito altas */
+        @media (min-height: 1920px) {
+            .container {
+                max-height: 1920px;
+            }
         }
     </style>
 </head>
