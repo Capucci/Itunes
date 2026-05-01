@@ -10,3 +10,41 @@
     <p>Se não for redirecionado automaticamente, <a href="https://music.amazon.com.br/albums/B0GFP191KN?ref=dm_sh_DBzXjxNxSDSqUG2Dpbq5mIx4y">clique aqui</a>.</p>
 </body>
 </html>
+Opção 2: Redirecionamento ao clicar em um link/ botão
+html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecionar ao clicar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clique no botão para abrir o link</h1>
+    <button onclick="abrirLink()">Abrir Música no Amazon Music</button>
+
+    <script>
+        function abrirLink() {
+            window.location.href = "https://music.amazon.com.br/albums/B0GFP191KN?ref=dm_sh_DBzXjxNxSDSqUG2Dpbq5mIx4y";
+        }
+    </script>
+</body>
+</html>
